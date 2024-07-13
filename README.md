@@ -1,2 +1,2 @@
-# negocios
+# business
 Repo dos negócios
