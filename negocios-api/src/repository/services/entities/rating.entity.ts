@@ -12,7 +12,7 @@ export class Rating extends RecordableEntity {
   rate: number;
 
   @Column({ type: 'varchar', length: 100, nullable: true, update: false })
-  description: string;
+  description?: string;
 
   @Column({ name: 'created_by', type: 'varchar', length: 100, update: false })
   createdBy: string;

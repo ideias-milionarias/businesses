@@ -12,10 +12,10 @@ export class Service extends ModifiableEntity {
   keywords: string;
 
   @Column({ type: 'varchar', length: 120, nullable: true })
-  description: string;
+  description?: string;
 
-  @Column({ name: 'price_average', type: 'decimal', precision: 10, scale: 2 })
-  priceAverage: string;
+  @Column({ name: 'price_average', type: 'decimal', precision: 10, scale: 2, nullable: true })
+  priceAverage?: string;
   
   @OneToMany(() => Rating, (rating) => rating.service)
   @JoinTable()

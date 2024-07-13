@@ -6,16 +6,16 @@ import { ModifiableEntity } from "src/repository/base/modifiable.entity";
 export class Contact extends ModifiableEntity {
 
   @Column({ type: 'varchar', length: 100, nullable: true })
-  email: string;
+  email?: string;
 
   @Column({ type: 'varchar', length: 100, nullable: true })
-  instagram: string;
+  instagram?: string;
 
   @Column({ type: 'varchar', length: 50, nullable: true })
-  whatsapp: string;
+  whatsapp?: string;
 
   @Column({ type: 'varchar', length: 50, nullable: true })
-  phone: string;
+  phone?: string;
 
   @ManyToOne(() => Business, (business) => business.contacts)
   business: Business;
