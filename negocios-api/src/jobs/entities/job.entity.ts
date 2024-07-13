@@ -1,9 +1,9 @@
 import { Rating } from "./rating.entity";
 import { Column, Entity, JoinTable, OneToMany } from "typeorm";
-import { ModifiableEntity } from "../../base/modifiable.entity";
+import { ModifiableEntity } from "../../_common/repository/modifiable.entity";
 
 @Entity({ name: 'services' })
-export class Service extends ModifiableEntity {
+export class Job extends ModifiableEntity {
 
   @Column({ type: 'varchar', unique: true, length: 120, update: false })
   name: string;
@@ -17,7 +17,7 @@ export class Service extends ModifiableEntity {
   @Column({ name: 'price_average', type: 'decimal', precision: 10, scale: 2, nullable: true })
   priceAverage?: string;
   
-  @OneToMany(() => Rating, (rating) => rating.service)
+  @OneToMany(() => Rating, (rating) => rating.job)
   @JoinTable()
   ratings: Rating;
 }

@@ -1,6 +1,6 @@
-import { Service } from "./service.entity";
+import { Job } from "./job.entity";
 import { Column, Entity, ManyToOne } from "typeorm";
-import { RecordableEntity } from "src/repository/base/recordable.entity";
+import { RecordableEntity } from "../../_common/repository/recordable.entity";
 
 @Entity({ name: 'ratings' })
 export class Rating extends RecordableEntity {
@@ -17,6 +17,6 @@ export class Rating extends RecordableEntity {
   @Column({ name: 'created_by', type: 'varchar', length: 100, update: false })
   createdBy: string;
 
-  @ManyToOne(() => Service, (service) => service.ratings)
-  service: Service;
+  @ManyToOne(() => Job, (service) => service.ratings)
+  job: Job;
 }

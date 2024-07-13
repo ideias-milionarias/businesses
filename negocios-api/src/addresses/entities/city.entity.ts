@@ -1,7 +1,7 @@
 import { State } from "./state.entity";
 import { Address } from "./address.entity";
-import { RecordableEntity } from "../../base/recordable.entity";
 import { Column, Entity, Index, ManyToOne, OneToMany } from "typeorm";
+import { RecordableEntity } from "../../_common/repository/recordable.entity";
 
 @Entity({ name: 'cities' })
 @Index('city_name_acronym', ['name', 'acronym'], { unique: true })

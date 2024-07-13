@@ -1,9 +1,9 @@
 import { Contact } from "./contact.entity";
+import { Job } from "../../jobs/entities/job.entity";
 import { BusinessCategory } from "./business-category.entity";
-import { ModifiableEntity } from "../../base/modifiable.entity";
-import { Address } from "src/repository/address/entities/address.entity";
-import { Service } from "src/repository/services/entities/service.entity";
+import { Address } from "../../addresses/entities/address.entity";
 import { Column, Entity, JoinTable, ManyToMany, OneToMany } from "typeorm";
+import { ModifiableEntity } from "../../_common/repository/modifiable.entity";
 
 @Entity({ name: 'businesses' })
 export class Business extends ModifiableEntity {
@@ -21,7 +21,7 @@ export class Business extends ModifiableEntity {
   @JoinTable()
   categories: BusinessCategory[];
 
-  @ManyToMany(() => Service)
+  @ManyToMany(() => Job)
   @JoinTable()
-  services: Service[];
+  jobs: Job[];
 }

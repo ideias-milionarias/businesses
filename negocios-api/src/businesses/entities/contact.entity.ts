@@ -1,6 +1,6 @@
 import { Business } from "./business.entity";
 import { Column, Entity, ManyToOne } from "typeorm";
-import { ModifiableEntity } from "src/repository/base/modifiable.entity";
+import { ModifiableEntity } from "../../_common/repository/modifiable.entity";
 
 @Entity({ name: 'contacts' })
 export class Contact extends ModifiableEntity {
